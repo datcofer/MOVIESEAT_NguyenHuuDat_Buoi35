@@ -1,0 +1,43 @@
+/* Base checkbox styles */
+input[type=checkbox] {
+    width: 13px;
+    margin-right: 24px;
+    cursor: pointer;
+    position: relative;
+    /* Needed for positioning the ::before pseudo-element */
+}
+
+/* Custom checkbox styling */
+input[type=checkbox]::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    border: 3px solid #ff9800;
+    background-color: #ffffff;
+    position: absolute;
+    /* Position the pseudo-element relative to the checkbox */
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* Ensure the pseudo-element is behind the checkbox */
+}
+
+/* Seat-specific styles */
+.seat-checkbox:checked::before {
+    background-color: #00ff00;
+    /* Green color for selected seats */
+}
+
+.bg-red-500:checked::before {
+    background-color: red;
+    /* Red color for reserved seats */
+}
+
+.bg-white:checked::before {
+    background-color: white;
+    /* White color for unselected seats */
+}
